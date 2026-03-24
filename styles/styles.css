@@ -3,54 +3,51 @@
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px;
-    grid-template-areas: 
-        "a a a a b b b b"
-        "a a a a b b b b"
-        "c c c c d d d d"
-        "c c c c d d d d"
-        "e e e e f f f f"
-        "e e e e f f f f";
-    align-items: start;
     border: 2px solid black;
     border-radius: 20px;
     background-color: aliceblue;
+    padding: 10px;
 }
 
-.container > div {
+.image {
+    column-count: 3;
+    column-gap: 10px;
+}
+
+.image > div {
     border: 2px solid red;
     border-radius: 5px;
+    overflow: hidden;
     background-color: #f0f0f0;
-    padding: 1em;
-    color: khaki;
+    break-inside: avoid;
+    margin-bottom: 10px;
 }
 
-
-.one {
-    grid-area: a;
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.two {
-    grid-area: b;
-}   
-
-.three {
-    grid-area: c;
-}
-
-.four {
-    grid-area: d;
-}
-
-.five {
-    grid-area: e;
-}
-
+.one,
+.two,
+.three,
+.four,
+.five,
 .six {
-    grid-area: f;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .image {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 560px) {
+    .image {
+        column-count: 1;
+    }
 }
 
 
